@@ -1,4 +1,6 @@
 # Plagiarism Checker
+# Author: Nkem Jeferson Achia
+# email: j.nkem@alustudent.com
 
 A simple Python-based tool that helps detect potential plagiarism between two text documents by analyzing word frequency and calculating similarity percentages.
 
@@ -25,7 +27,8 @@ Make sure you have Python 3 installed on your system. You can check by running:
 ### Step 2: Install Required Library
 Install the tabulate library using the following command:
 - bash
-- sudo apt install python3-tabulate
+- sudo apt install python3-tabulate (for Ubuntu Systems)
+- pip install tabulate (for Windows systems)
 
 ### Step 3: Download the Program
 Save the plagiarism checker code as `plagiarism_checker.py` on your computer.
