@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import string
 from collections import Counter
 from tabulate import tabulate
@@ -52,7 +53,7 @@ def calculate_plagiarism_percentage(words1, words2):
 def main():
     print("=====================================================")
     print("Welcome to the Plagiarism Checker!")
-    print("Before you start\nEnter the filenames of the two essays you want to compare.")
+    print("Before you start,enter the filenames of the two essays you want to compare.")
     file1=input("Enter the first essay filename (e.g., 'essay1.txt'): ")
     file2=input("Enter the second essay filename (e.g., 'essay2.txt'): ")
     words1 = load_text(file1)
@@ -67,7 +68,7 @@ def main():
 
     while True:
         print("=================================================")
-        print("\n=== =====Plagiarism Checker Menu===============")
+        print("\n=========Plagiarism Checker Menu===============")
         print("1. Show common words and their frequencies")
         print("2. Search for a specific word")
         print("3. Calculate plagiarism percentage")
@@ -76,7 +77,7 @@ def main():
 
 
         choice = input("Enter your choice (1-4): ")
-
+# Process the user's choice and call the appropriate function
         if choice == '1':
             common_table = find_common_words(counter1, counter2)
             if common_table:
@@ -94,6 +95,7 @@ def main():
 
         elif choice == '3':
             percentage = calculate_plagiarism_percentage(words1, words2)
+# Display the plagiarism percentage and result using tabulate            
             print(tabulate([[f"{percentage:.2f}%", "Plagiarism" if percentage >= 50 else "No Plagiarism"]],
                            headers=["Plagiarism %", "Result"], tablefmt="fancy_grid"))
 
@@ -104,6 +106,6 @@ def main():
         else:
             print("Invalid choice. Please enter a number from 1 to 4.")
 
-# === Run the program ===
+# The main function that runs the program. 
 if __name__ == "__main__":
     main()
